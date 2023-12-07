@@ -18,8 +18,13 @@ spec:
         ports:
         - name: openvpn
           containerPort: 1194
-        capAdd:
-          - NET_ADMIN
-        volumes:
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+        volumeMounts:
           - name: openvpn-data
-            emptyDir: {}
+            mountPath: /etc/openvpn
+  volumes:
+    - name: openvpn-data
+      emptyDir: {}
