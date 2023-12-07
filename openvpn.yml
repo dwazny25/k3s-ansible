@@ -25,6 +25,6 @@ spec:
         volumeMounts:
           - name: openvpn-data
             mountPath: /etc/openvpn
-  volumes:
-    - name: openvpn-data
-      emptyDir: {}
+      volumes:
+        - name: openvpn-data
+          emptyDir: {}
