@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openvpn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openvpn
+  template:
+    metadata:
+      labels:
+        app: openvpn
+    spec:
+      containers:
+      - name: openvpn
+        image: kylemanna/openvpn
+        ports:
+        - name: openvpn
+          containerPort: 1194
+        capAdd:
+          - NET_ADMIN
+        volumes:
+          - name: openvpn-data
+            emptyDir: {}
