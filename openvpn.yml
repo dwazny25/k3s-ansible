@@ -15,6 +15,7 @@ spec:
       containers:
       - name: openvpn
         image: kylemanna/openvpn
+        imagePullPolicy: IfNotPresent
         ports:
         - name: openvpn
           containerPort: 1194
