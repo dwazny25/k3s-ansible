@@ -1,0 +1,23 @@
+---
+- name: Install Packages on Remote Ubuntu Server
+  hosts: your_remote_server  # Replace with your server hostname or IP address
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - net-tools
+          - firmware-b43-installer
+          - bcmwl-kernel-source
+          - wpasupplicant
+          - ansible
+          - network-manager
+          - git
+          - ifupdown
+          - sshpass
+        state: present
