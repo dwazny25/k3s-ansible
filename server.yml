@@ -20,4 +20,5 @@
           - git
           - ifupdown
           - sshpass
+          - netaddr
         state: present
