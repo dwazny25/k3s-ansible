@@ -15,7 +15,7 @@
           name: longhorn
           chart_ref: longhorn/longhorn
           namespace: longhorn-system
-          r elease_name: longhorn
+          release_name: longhorn
           state: present
           values:
             storageClass.create: "true"
