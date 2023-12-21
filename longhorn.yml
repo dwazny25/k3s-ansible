@@ -6,7 +6,7 @@
   
   tasks:
     - name: Install Helm
-      community.general.helm:
+      community.kubernetes.helm:
         name: helm
         state: present
     - name: Add Longhorn Helm repository
