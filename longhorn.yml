@@ -20,7 +20,7 @@
         name: longhorn
         chart_ref: longhorn/longhorn
         namespace: longhorn-system
-        release_namespace: longhorn
+        release_name: longhorn
         values:
           storageClass.create: "true"
           storageClass.defaultClass: "true"
