@@ -9,6 +9,7 @@
       community.kubernetes.helm:
         name: helm
         state: present
+        release_namespace: kube-system
     - name: Add Longhorn Helm repository
       community.kubernetes.helm_repository:
         name: longhorn
