@@ -6,7 +6,7 @@ metadata:
   namespace: longhorn-system
 spec:
   ipFamilyPolicy: PreferDualStack
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8000
