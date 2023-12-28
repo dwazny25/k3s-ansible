@@ -29,6 +29,11 @@ spec:
         - name: ddclient
           image: linuxserver/ddclient
           imagePullPolicy: Always
+          env:
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
           volumeMounts:
             - mountPath: /config
               name: ddclient-config-file
