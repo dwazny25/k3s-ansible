@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ddclient-deployment
+  namespace: default
   labels:
     app: ddclient
 spec:
