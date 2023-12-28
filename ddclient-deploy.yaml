@@ -37,5 +37,5 @@ spec:
           - name: TZ
             value: Etc/UTC
           volumeMounts:
-            - mountPath: /config
+            - mountPath: /defaults/ddclient.conf
               name: ddclient-config-file
