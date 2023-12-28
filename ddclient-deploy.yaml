@@ -29,7 +29,7 @@ spec:
         - name: ddclient
           image: linuxserver/ddclient
           imagePullPolicy: Always
-          env:
+          environment:
           - name: PUID
             value: "1000"
           - name: PGID
@@ -39,10 +39,3 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: ddclient-config-file
-          resources:
-            requests:
-              cpu: 10m
-              memory: 64Mi
-            limits:
-              cpu: 50m
-              memory: 128Mi
