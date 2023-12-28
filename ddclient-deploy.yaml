@@ -34,6 +34,8 @@ spec:
             value: "1000"
           - name: PGID
             value: "1000"
+          - name: TZ
+            value: Etc/UTC
           volumeMounts:
             - mountPath: /config
               name: ddclient-config-file
