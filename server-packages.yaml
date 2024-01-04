@@ -1,0 +1,24 @@
+---
+- name: Install Packages on Remote Ubuntu Server
+  hosts: k3s_cluster
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - net-tools
+          - firmware-b43-installer
+          - bcmwl-kernel-source
+          - wpasupplicant
+          - ansible
+          - bcmwl-kernel-source
+          - network-manager
+          - git
+          - ifupdown
+          - sshpass
+        state: present
