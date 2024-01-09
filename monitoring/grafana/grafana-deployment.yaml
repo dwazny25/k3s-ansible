@@ -37,8 +37,8 @@ spec:
         - mountPath: /var/lib/grafana
           name: grafana-storage
           readOnly: false
-      nodeSelector:
-        node-type: worker
+#      nodeSelector:
+#        node-type: worker
       securityContext:
         fsGroup: 65534
         runAsNonRoot: true
