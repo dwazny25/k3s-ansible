@@ -7,7 +7,7 @@ spec:
   ports:
   - name: web
     port: 9090
-    targetPort: web
+    targetPort: 9090
   selector:
     prometheus: prometheus-persistant
   sessionAffinity: ClientIP
