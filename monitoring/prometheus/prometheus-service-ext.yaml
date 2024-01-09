@@ -11,5 +11,5 @@ spec:
     - name: web
       protocol: TCP
       port: 9090
-      targetPort: web
+      targetPort: 9090
 #  loadBalancerIP: 192.168.0.205 //comment out since MetalLB will pick it
