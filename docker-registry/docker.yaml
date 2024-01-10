@@ -15,8 +15,8 @@ spec:
         app: registry
         name: registry
     spec:
-      nodeSelector:
-        node-type: worker
+#      nodeSelector:
+#        node-type: worker
       containers:
       - name: registry
         image: registry:2
