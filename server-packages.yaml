@@ -21,4 +21,5 @@
           - git
           - ifupdown
           - sshpass
+          - openssl
         state: present
