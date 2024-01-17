@@ -1,6 +1,7 @@
 # Wazny's k3s Setup (Similar but specific notes)
-This is all TL;DR version of how and what I got setup.  Below is the main cluster sertup by k3s-ansible
-In Cluster Info is the specifics to my cluster and commands
+This is all TL;DR version of how and what I got setup.  
+Below is the main cluster sertup by k3s-ansible.
+In Cluster Info is the specifics to my cluster and commands.
 - [Cluster Info](https://github.com/dwazny25/kube-server-setup/blob/main/README.md)
 
 # Automated build of HA k3s Cluster with `kube-vip` and MetalLB
