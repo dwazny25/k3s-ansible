@@ -1,3 +1,6 @@
+# Wazny's k3s Setup (Similar but specific notes)
+- [Cluster Info](https://github.com/dwazny25/kube-server-setup/blob/main/README.md)
+
 # Automated build of HA k3s Cluster with `kube-vip` and MetalLB
 
 ![Fully Automated K3S etcd High Availability Install](https://img.youtube.com/vi/CbkEWcUZ7zM/0.jpg)
