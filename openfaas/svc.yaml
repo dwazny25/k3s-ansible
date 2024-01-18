@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: gateway
-  type: LoadBalancer
+# test to see if Cluster IP picks up with ingress  type: LoadBalancer
   ports:
     - name: openfaas-port
       protocol: TCP
