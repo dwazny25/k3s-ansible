@@ -9,7 +9,7 @@ spec:
   ingressClassName: nginx # use only with k8s version >= 1.18.0
   tls:
   rules:
-  - host: openfaas.example.com
+  - host: openfaas.example.local
     http:
       paths:
       - path: /
