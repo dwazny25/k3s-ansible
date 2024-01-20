@@ -7,7 +7,6 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 spec:
-  ingressClassName: traefik-lb
   rules:
   - http:
       paths:
