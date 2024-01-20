@@ -20,8 +20,8 @@ spec:
   rules:
   - http:
       paths:
-      - pathType: Prefix
-        path: "/longhorn"
+      - path: "/longhorn"
+        pathType: Prefix
         backend:
           service:
             name: longhorn-frontend
