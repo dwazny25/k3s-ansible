@@ -24,7 +24,7 @@ spec:
             - --providers.kubernetesingress
             - --api
             - --metrics.prometheus
-            - 
+            - --api.debug
           ports:
             - name: web
               containerPort: 80
