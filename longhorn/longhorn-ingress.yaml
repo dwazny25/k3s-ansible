@@ -21,7 +21,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: "/longhorn/"
+        path: "/longhorn"
         backend:
           service:
             name: longhorn-frontend
