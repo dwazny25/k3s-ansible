@@ -7,8 +7,8 @@ spec:
   rules:
   - http:
       paths:
-        - path: /open-faas/
-          pathType: Prefix
+        - pathType: Prefix
+          path: "/open-faas/"
           backend:
             service:
               name: openfaas-service
