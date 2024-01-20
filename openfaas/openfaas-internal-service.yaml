@@ -1,0 +1,15 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: openfaas-int-service
+  namespace: openfaas
+spec:
+  type: ClusterIP
+  selector:
+    app: gateway
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
