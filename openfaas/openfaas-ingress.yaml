@@ -3,14 +3,17 @@ kind: Ingress
 metadata:
   name: openfaas-ingress
   namespace: openfaas
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - http:
+  - host: "openfaas.cube.local"
+    http:
       paths:
-        - pathType: Prefix
-          path: "/"
-          backend:
-            service:
-              name: openfaas-service
-              port:
-                number: 8080
+      - pathType: Prefix
+        path: "/openfaas"
+        backend:
+          service:
+            name: openfaas-service
+            port:
+              number: 8080
