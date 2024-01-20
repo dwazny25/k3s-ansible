@@ -3,19 +3,14 @@ kind: Ingress
 metadata:
   name: openfaas-ingress
   namespace: openfaas
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  ingressClassName: nginx # use only with k8s version >= 1.18.0
-  tls:
   rules:
-  - host: openfaas.example.local
-    http:
+  - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: openfaas-service
-            port:
-              number: 8080
+        - path: /open-faas/
+          pathType: Prefix
+          backend:
+            service:
+              name: openfaas-service
+              port:
+                number: 8080
