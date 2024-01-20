@@ -7,13 +7,12 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: "openfaas.cube.local"
-    http:
+  - http:
       paths:
-      - pathType: Prefix
-        path: "/openfaas"
-        backend:
-          service:
-            name: openfaas-service
-            port:
-              number: 8080
+        - pathType: Prefix
+          path: "/openfaas"
+          backend:
+            service:
+              name: openfaas-service
+              port:
+                number: 8080
