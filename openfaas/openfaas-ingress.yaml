@@ -7,10 +7,10 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
-    traefik.ingress.kubernetes.io/rewrite-target: /
+#    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: wazny.cube.local
+#  - host: wazny.cube.local
   - http:
       paths:
         - pathType: Prefix
