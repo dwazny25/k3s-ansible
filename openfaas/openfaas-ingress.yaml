@@ -12,7 +12,7 @@ spec:
   - host: openfaas.cube.local
   - http:
       paths:
-        - pathType: Prefix
+        - pathType: Exact
           path: /openfaas
           backend:
             service:
