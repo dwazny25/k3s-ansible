@@ -20,12 +20,12 @@ spec:
         - name: traefik
           image: traefik:v2.10
           args:
-            - --api.insecure
+            - --api.insecure=true
             - --providers.kubernetesingress=true
             - --api=true
             - --metrics.prometheus=true
             - --api.debug=true
-            - --entrypoints.web.address=:80
+            - --ingressClass=traefik
           ports:
             - name: web
               containerPort: 80
