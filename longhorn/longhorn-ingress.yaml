@@ -5,9 +5,9 @@ metadata:
   namespace: longhorn-system
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+ #   traefik.ingress.kubernetes.io/router.entrypoints: web
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
-    traefik.ingress.kubernetes.io/rewrite-target: /
+#    traefik.ingress.kubernetes.io/rewrite-target: /
     # type of authentication
     #nginx.ingress.kubernetes.io/auth-type: basic
     # prevent the controller from redirecting (308) to HTTPS
@@ -20,9 +20,10 @@ metadata:
     #nginx.ingress.kubernetes.io/proxy-body-size: 10000m
 spec:
   rules:
+  - host: longhorn.cube.local
   - http:
       paths:
-      - path: /longhorn
+      - path: /
         pathType: Prefix
         backend:
           service:
