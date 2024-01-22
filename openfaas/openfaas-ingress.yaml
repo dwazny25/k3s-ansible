@@ -9,10 +9,10 @@ metadata:
 #    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 spec:
   rules:
-  - host: openfaas.cube.local
+  - host: wazny.cube.local
   - http:
       paths:
-        - pathType: Exact
+        - pathType: Prefix
           path: /openfaas
           backend:
             service:
