@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: openfaas-ingress-crd
+  namespace: openfaas
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/openfaas`)
+    kind: Rule
+    services:
+    - name: openfaas-service
+      port: 8080
