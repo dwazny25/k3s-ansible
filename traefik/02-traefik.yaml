@@ -26,6 +26,9 @@ spec:
             - --metrics.prometheus=true
             - --api.debug=true
 #            - --ingressClass=traefik
+            - --entrypoints.web.address=:80
+            - --providers.kubernetescrd
+            - --log.level=DEBUG
           ports:
             - name: web
               containerPort: 80
