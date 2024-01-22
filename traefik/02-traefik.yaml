@@ -25,6 +25,7 @@ spec:
             - --api=true
             - --metrics.prometheus=true
             - --api.debug=true
+            - --entrypoints.web.address=:80
           ports:
             - name: web
               containerPort: 80
