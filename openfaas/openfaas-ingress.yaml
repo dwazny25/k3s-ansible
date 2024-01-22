@@ -12,7 +12,7 @@ spec:
   - host: wazny.cube.local
   - http:
       paths:
-        - pathType: Prefix
+        - pathType: ImplementationSpecific
           path: /openfaas
           backend:
             service:
