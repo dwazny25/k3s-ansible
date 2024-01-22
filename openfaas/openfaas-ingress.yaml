@@ -5,12 +5,12 @@ metadata:
   namespace: openfaas
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+#    traefik.ingress.kubernetes.io/router.entrypoints: web
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 #    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-#  - host: wazny.cube.local
+  - host: openfaas.cube.local
   - http:
       paths:
         - pathType: Prefix
