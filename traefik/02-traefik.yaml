@@ -25,7 +25,7 @@ spec:
             - --api=true
             - --metrics.prometheus=true
             - --api.debug=true
-            - --ingressClass=traefik
+#            - --ingressClass=traefik
           ports:
             - name: web
               containerPort: 80
