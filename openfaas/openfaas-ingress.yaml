@@ -16,6 +16,6 @@ spec:
           path: /openfaas
           backend:
             service:
-              name: openfaas-int-service
+              name: openfaas-service
               port:
                 number: 8080
