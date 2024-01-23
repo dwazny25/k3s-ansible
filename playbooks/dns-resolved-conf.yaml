@@ -1,6 +1,6 @@
 ---
 - name: Configure systemd-resolved
-  hosts: k3s_cluster  # k3s hosts
+  hosts: localhost
   become: yes
 
   tasks:
