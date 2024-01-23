@@ -1,0 +1,28 @@
+---
+- name: Configure Unattended Upgrades
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install unattended-upgrades package
+      apt:
+        name: unattended-upgrades
+        state: present
+
+    - name: Configure unattended-upgrades
+      template:
+        src: 50unattended-upgrades
+        dest: /etc/apt/apt.conf.d/50unattended-upgrades
+      notify: Restart unattended-upgrades
+
+    - name: Ensure email notifications are configured
+      lineinfile:
+        path: /etc/apt/apt.conf.d/50unattended-upgrades
+        line: 'Unattended-Upgrade::Mail "davidwazny19@gmail.com";'
+      notify: Restart unattended-upgrades
+
+  handlers:
+    - name: Restart unattended-upgrades
+      service:
+        name: unattended-upgrades
+        state: restarted
