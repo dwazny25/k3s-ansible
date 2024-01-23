@@ -9,10 +9,11 @@
         path: /etc/systemd/resolved.conf
         regexp: "{{ item.regexp }}"
         line: "{{ item.line }}"
+        insertafter: "{{ item.insertafter | default('EOF') }}"
       with_items:
-        - { regexp: '^#?DNS=', line: 'DNS=192.168.1.1' }
-        - { regexp: '^#?Domains=', line: 'Domains=cube.local' }
-        - { regexp: '^#?FallbackDNS=', line: 'FallbackDNS=8.8.8.8' }
+        - { regexp: '^#?DNS=', line: 'DNS=192.168.1.1', insertafter: '^#?DNS=' }
+        - { regexp: '^#?DOMAINS=', line: 'DOMAINS=cube.local', insertafter: '^#?DOMAINS=' }
+        - { regexp: '^#?FallbackDNS=', line: 'FallbackDNS=8.8.8.8', insertafter: '^#?FallbackDNS=' }
 
     - name: Restart systemd-resolved
       systemd:
