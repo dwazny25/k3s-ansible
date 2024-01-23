@@ -1,0 +1,20 @@
+---
+- name: Configure systemd-resolved
+  hosts: your_target_servers
+  become: yes
+
+  tasks:
+    - name: Set DNS and DOMAINS in resolved.conf
+      lineinfile:
+        path: /etc/systemd/resolved.conf
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      with_items:
+        - { regexp: '^#?DNS=', line: 'DNS=192.168.1.1' }
+        - { regexp: '^#?DOMAINS=', line: 'DOMAINS=cube.local' }
+        - { regexp: '^#?FallbackDNS=', line: 'DOMAINS=8.8.8.8' }
+
+    - name: Restart systemd-resolved
+      systemd:
+        name: systemd-resolved
+        state: restarted
