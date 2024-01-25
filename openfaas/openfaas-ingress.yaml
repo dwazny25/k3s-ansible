@@ -11,7 +11,7 @@ metadata:
 spec:
   rules:
   - host: openfaas.cube.local
-  - http:
+    http:
       paths:
         - pathType: Prefix
           path: /
