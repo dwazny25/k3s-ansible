@@ -20,7 +20,7 @@ metadata:
     #nginx.ingress.kubernetes.io/proxy-body-size: 10000m
 spec:
   rules:
-  - host: longhorn.cube.local
+  - host: longhorn-frontend.cube.local
   - http:
       paths:
       - path: /
