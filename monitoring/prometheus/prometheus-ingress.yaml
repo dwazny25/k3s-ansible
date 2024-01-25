@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: traefik
+#    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
+#    traefik.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: prometheus.cube.local
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: prometheus-external
+              port:
+                number: 9090
