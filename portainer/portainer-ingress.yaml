@@ -17,6 +17,6 @@ spec:
           path: /
           backend:
             service:
-              name: portainer-service
+              name: portainer
               port:
                 number: 9000
