@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: PathPrefix(`/openfaas`)
+  - match: Host(`openfaas.cube.local`)
     kind: Rule
     services:
     - name: openfaas-service
