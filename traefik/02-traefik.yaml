@@ -20,9 +20,9 @@ spec:
         - name: traefik
           image: traefik:v2.10
           args:
-            - --api.insecure=true
-            - --providers.kubernetesingress=true
-            - --api=true
+            - --api.insecure
+            - --providers.kubernetesingress
+            - --api
             - --metrics.prometheus=true
             - --api.debug=true
 #            - --ingressClass=traefik
