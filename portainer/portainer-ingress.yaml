@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portainer-ingress
+  namespace: portainer
+  annotations:
+    kubernetes.io/ingress.class: traefik
+#    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
+#    traefik.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: portainer.cube.local
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: portainer-service
+              port:
+                number: 9000
