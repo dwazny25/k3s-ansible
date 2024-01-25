@@ -10,5 +10,5 @@ spec:
   - match: Host(`longhorn.cube.local`)
     kind: Rule
     services:
-    - name: openfaas-service
-      port: 8080
+    - name: longhorn-frontend
+      port: 80
