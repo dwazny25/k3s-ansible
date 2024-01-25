@@ -21,7 +21,7 @@ metadata:
 spec:
   rules:
   - host: longhorn-frontend.cube.local
-  - http:
+    http:
       paths:
       - path: /
         pathType: Prefix
