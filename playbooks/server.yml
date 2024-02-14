@@ -21,4 +21,9 @@
           - ifupdown
           - sshpass
           - netaddr
+          - sendmail
+          - mailutils
+          - unattended-upgrades 
+          - apt-listchanges
+          - bsd-mailx
         state: present
