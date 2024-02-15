@@ -6,7 +6,10 @@
   tasks:
     - name: Install unattended-upgrades package
       apt:
-        name: unattended-upgrades
+        name: 
+        - unattended-upgrades
+        - apt-listchanges
+        - bsd-mailx
         state: present
 
     - name: Configure unattended-upgrades
