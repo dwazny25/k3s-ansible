@@ -24,6 +24,19 @@
         line: 'Unattended-Upgrade::Mail "davidwazny19@gmail.com";'
       notify: Restart unattended-upgrades
 
+    - name: Configure unattended-upgrades using debconf
+      debconf:
+        name: unattended-upgrades
+        question: "{{ item.question }}"
+        vtype: "{{ item.vtype }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { question: "unattended-upgrades/enable_auto_updates", vtype: "boolean", value: "true" }
+        - { question: "unattended-upgrades/automatic_reboot", vtype: "boolean", value: "true" }
+        - { question: "unattended-upgrades/enable_download", vtype: "boolean", value: "true" }
+        - { question: "unattended-upgrades/allowed_origins", vtype: "select", value: "origin", multiselect: "teg,archive,security,proposed-updates" }
+        - { question: "unattended-upgrades/confirm_auto_updates", vtype: "boolean", value: "true" }
+
   handlers:
     - name: Restart unattended-upgrades
       service:
