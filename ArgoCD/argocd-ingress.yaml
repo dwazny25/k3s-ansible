@@ -19,4 +19,4 @@ spec:
             service:
               name: argocd-lb
               port:
-                number: 8080
+                number: 80
