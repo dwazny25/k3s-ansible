@@ -1,7 +1,9 @@
 # Wazny's k3s Setup (Similar but specific notes)
 This is all TL;DR version of how and what I got setup.  
 
-Below is the main cluster sertup by k3s-ansible.
+Below is the main cluster setup by k3s-ansible.
+
+**Note: I have deviated from the original origin in this fork**
 
 In Cluster Info is the specifics to my cluster and commands.
 
