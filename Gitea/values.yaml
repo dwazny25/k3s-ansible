@@ -1,0 +1,27 @@
+# Disable memcached; Gitea will use an internal 'memory' cache.
+memcached:
+  enabled: false
+
+# Disable postgresql; we've already created our own.
+postgresql:
+  enabled: false
+
+# Tell MetalLB that sharing the IP (for HTTP and SSH) is fine.
+# I'm not convinced this is necessary -- it seemed to work without it -- but it's in the Gitea docs, so...
+service:
+  ssh:
+    annotations:
+      metallb.universe.tf/allow-shared-ip: gitea
+
+# The gitea.config section maps to the app.ini file.
+gitea:
+  config:
+    server:
+      DOMAIN: git.k3s.differentpla.net
+    database:
+      DB_TYPE: postgres
+      HOST: gitea-postgres.gitea.svc.cluster.local:5432
+      USER: gitea
+      PASSWD: gitea
+      NAME: gitea
+      SCHEMA: gitea
