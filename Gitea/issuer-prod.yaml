@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+  namespace: gitea
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: davidwazny19@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - selector: {}
+      http01:
+        ingress:
+          class: traefik
