@@ -1,27 +1,36 @@
-# Disable memcached; Gitea will use an internal 'memory' cache.
-memcached:
-  enabled: false
+ingress:
+  enabled: true
+  annotations:
+     cert-manager.io/issuer: letsencrypt-prod
 
-# Disable postgresql; we've already created our own.
-postgresql:
-  enabled: false
-
-# Tell MetalLB that sharing the IP (for HTTP and SSH) is fine.
-# I'm not convinced this is necessary -- it seemed to work without it -- but it's in the Gitea docs, so...
+     kubernetes.io/ingress.class: traefik
+     kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: gitea.cube.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+  - secretName: gitea-tls
+    hosts:
+        - gitea.cube.local
 service:
+  http:
+    type: ClusterIP
+    port: 3000
+    clusterIP: None
   ssh:
-    annotations:
-      metallb.universe.tf/allow-shared-ip: gitea
+    type: LoadBalancer
+    port: 2222
+    clusterIP: None
 
-# The gitea.config section maps to the app.ini file.
 gitea:
+  admin:
+    existingSecret: gitea-admin-secret
+    email: davidwazny19@gmail.com
   config:
     server:
-      DOMAIN: git.k3s.differentpla.net
-    database:
-      DB_TYPE: postgres
-      HOST: gitea-postgres.gitea.svc.cluster.local:5432
-      USER: gitea
-      PASSWD: gitea
-      NAME: gitea
-      SCHEMA: gitea
+      SSH_DOMAIN: gitea-ssh.cube.local
+    service:
+      DISABLE_REGISTRATION: true
+      SHOW_REGISTRATION_BUTTON: false
