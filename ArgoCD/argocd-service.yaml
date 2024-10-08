@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   selector:
-    app.kubernetes.io/name: argocd-server-service
-    app.kubernetes.io/instance: argocd-server-service
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: argocd-server
   type: LoadBalancer
   ports:
     - name: http
