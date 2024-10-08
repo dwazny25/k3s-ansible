@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: argocd-lb
+  name: argocd-server-service
   namespace: argocd
 spec:
   selector:
